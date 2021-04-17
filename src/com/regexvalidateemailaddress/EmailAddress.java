@@ -6,7 +6,7 @@ public class EmailAddress {
 
 	public static boolean isValidEmailAddress(String emailAddress) {
 
-		String regex = "^[a-z]+[-.+]*[0-9]*@[a-z0-9]+[.]{1}[com]*[net]*[.{1},]*[a-z{2}]*$";
+		String regex = "^[a-z]+[[-.+]{0,1}0-9]*@[a-z0-9]+[.]{1}(com|net)[.,]{0,1}[a-z{2}]*$";
 		Pattern p = Pattern.compile(regex);
 
 		if (emailAddress == null) {
@@ -47,6 +47,44 @@ public class EmailAddress {
 		String email8 = "abc+100@gmail.com";
 		System.out.println(email8+ ": " + isValidEmailAddress(email8));
 		
+		 String email9 = "abc";
+      System.out.println(email9+ ": " + isValidEmailAddress(email9));
+
+		 String email10 = "abc@.com.my";
+      System.out.println(email10+ ": " + isValidEmailAddress(email10));
+
+		 String email11 = "abc123@gmail.a";
+      System.out.println(email11+ ": " + isValidEmailAddress(email11));
+
+		 String email12 = "abc123@.com";
+      System.out.println(email12+ ": " + isValidEmailAddress(email12));
+
+		 String email13 = "abc123@.com.com";
+      System.out.println(email13+ ": " + isValidEmailAddress(email13));
+
+		 String email14 = ".abc@abc.com";
+      System.out.println(email14+ ": " + isValidEmailAddress(email14));
+
+		 String email15 = "abc()*@gmail.com";
+      System.out.println(email15+ ": " + isValidEmailAddress(email15));
+
+		 String email16 = "abc@%*.com";
+      System.out.println(email16+ ": " + isValidEmailAddress(email16));
+
+		 String email17 = "abc..2002@gmail.com";
+      System.out.println(email17+ ": " + isValidEmailAddress(email17));
+
+		 String email18 = "abc.@gmail.com";
+      System.out.println(email18+ ": " + isValidEmailAddress(email18));
+
+		 String email19 = "abc@abc@gmail.com";
+      System.out.println(email19+ ": " + isValidEmailAddress(email19));
+
+		 String email20 = "abc@gmail.com.1a";
+      System.out.println(email20+ ": " + isValidEmailAddress(email20));
+
+		 String email21 = "abc@gmail.com.aa.au";
+      System.out.println(email21+ ": " + isValidEmailAddress(email21));
 	}
 
 }
